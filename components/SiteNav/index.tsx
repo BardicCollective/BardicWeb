@@ -25,18 +25,18 @@ class SiteNav extends Component<SiteNavProps,SiteNavStateProps> {
 
   render() {
     const { collapsed } = this.state;
-    let classes = styles.item;
+    let classes = `${styles.item} ${styles.light}`;
     let toggle = <HamburgerMenu stroke="white" />;
     if (!collapsed) {
       classes += ` ${styles.active}`;
       toggle = <Close stroke="white" />;
     }
     return (
-      <nav className={styles.site_nav}>
+      <nav className={`${styles.site_nav} ${styles.light}`}>
         <ul className={`${styles.menu}`}>
-          <li className={`${styles.logo}`}><a href='/'>Bardic Collective</a></li>
-          <li className={classes}><a href='/'>Listen</a></li>
-          <li className={classes}><a href='/about'>About</a></li>
+          <li className={`${styles.logo}`}><a className={styles.light} href='/'>Bardic Collective</a></li>
+          <li className={classes}><a className={styles.light} href='/'>Listen</a></li>
+          <li className={classes}><a className={styles.light} href='/about'>About</a></li>
 
           {/*<li className='lightSwitch'><LightSwitch /></li>*/}
           <li className={`${styles.toggle}`} onClick={this.handleToggle}>{toggle}</li>

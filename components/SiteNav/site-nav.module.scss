@@ -1,3 +1,5 @@
+@import "../../styles/_colors.scss";
+
 %site-nav-everything {
   box-sizing: border-box;
   padding: 0;
@@ -5,7 +7,16 @@
 }
 
 .site_nav {
-  background: #222;
+  &.dark {
+    background: $dark-background-secondary;
+    color: $dark-text-default;
+  }
+
+  &.light {
+    background: $light-background-secondary;
+    color: $light-text-default;
+  }
+
   @extend %site-nav-everything;
   padding: 5px 20px;
   margin-bottom: 10px;
@@ -13,11 +24,18 @@
   * { @extend %site-nav-everything; }
 
   a {
-    color: white;
     text-decoration: none;
 
     &:hover {
       text-decoration: underline;
+    }
+
+    &.dark {
+      color: $dark-text-default;
+    }
+
+    &.light {
+      color: $light-text-secondary;
     }
   }
 
@@ -32,8 +50,15 @@
 
   .toggle {
     order: 1;
-    color: white;
     cursor: pointer;
+
+    &.dark {
+      color: $dark-text-default;
+    }
+
+    &.light {
+      color: $light-text-secondary;
+    }
   }
 
   .lightbulb {
