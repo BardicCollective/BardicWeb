@@ -10,7 +10,7 @@ class MyDocument extends Document {
 
   render() {
     // const bodyClass = this.props.darkMode ? 'darkMode' : 'lightMode';
-    const bodyClass = 'darkMode no-margin'
+    const bodyClass = 'light no-margin'
     return (
       <Html>
         <Head />

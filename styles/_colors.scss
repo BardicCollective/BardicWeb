@@ -1,4 +1,8 @@
-$light-mode-background: #dfdfdf;
-$dark-mode-background: #1e1e1e;
-$light-mode-text: black;
-$dark-mode-text: white;
+$light-background-default: #dfdfdf;
+$light-background-secondary: darken( $light-background-default, 20% );
+$light-text-default: black;
+$light-text-secondary: white;
+
+$dark-background-default: #1e1e1e;
+$dark-background-secondary: lighten( $dark-background-default, 20% );
+$dark-text-default: white;
