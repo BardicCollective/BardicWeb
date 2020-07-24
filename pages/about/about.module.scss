@@ -1,0 +1,16 @@
+.about {
+    display: flex;
+    justify-content: center;
+
+    p {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: 100;
+    }
+
+    @media all and (min-width: 800px) {
+        p {
+            width: 800px;
+        }
+    }
+}
