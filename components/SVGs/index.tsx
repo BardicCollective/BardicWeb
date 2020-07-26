@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 
 // Wrapper?
 // export const Svg = (children) => {
@@ -114,10 +114,11 @@ export const HamburgerMenu: React.StatelessComponent<HamburgerMenuProps> = ({hei
 
 interface LightbulbProps {
   darkMode?: boolean,
-  on?: boolean
+  on?: boolean,
+  classes?: string
 }
 
-export const Lightbulb: React.StatelessComponent<LightbulbProps> = ({darkMode = false, on = true}) => {
+export const Lightbulb: FunctionComponent<LightbulbProps> = ({darkMode = false, on = true, classes}) => {
   let mainStroke = 'black';
   let wickStroke = 'white';
   let glassFill = 'yellow';
@@ -136,7 +137,7 @@ export const Lightbulb: React.StatelessComponent<LightbulbProps> = ({darkMode = 
   }
 
   return (
-    <svg className="lightbulb" viewBox="0 0 52 72" width="52" height="72" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg className={classes} viewBox="0 0 52 72" width="52" height="72" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <circle cx="26" cy="26" r="25" stroke={mainStroke} fill={glassFill} strokeWidth="2" />
       <path d="M16,49 V67 C 16,71 36,71 36,67 V49 C26,51 26,51 16,49" fill={nubFill} stroke={mainStroke} strokeWidth="2" />
       <path d="M16,54 C16,59 36,59 36,54" fill="transparent" stroke={mainStroke} strokeWidth="2" />
