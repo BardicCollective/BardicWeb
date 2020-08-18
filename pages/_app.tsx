@@ -1,8 +1,15 @@
 import '../styles/styles.scss'
 import SiteNav from '@components/SiteNav';
+import { ThemeProvider } from '../contexts/theme';
 
 function MyApp({ Component, pageProps }) {
-  return <SiteNav><Component {...pageProps} /></SiteNav>
+  return (
+    <ThemeProvider>
+      <SiteNav>
+        <Component {...pageProps} />
+      </SiteNav>
+    </ThemeProvider>
+  );
 }
 
 export default MyApp

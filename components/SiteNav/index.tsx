@@ -7,18 +7,18 @@ const SiteNav: FunctionComponent<{}> = () => {
 
   const [collapsed, setCollapsed] = useState(true);
 
-  let classes = `${styles.item} ${styles.light}`;
+  let classes = `${styles.item}`;
   let toggle = <HamburgerMenu stroke="white" />;
   if (!collapsed) {
     classes += ` ${styles.active}`;
     toggle = <Close stroke="white" />;
   }
   return (
-    <nav className={`${styles.site_nav} ${styles.light}`}>
+    <nav className={styles.site_nav}>
       <ul className={`${styles.menu}`}>
-        <li className={`${styles.logo}`}><a className={styles.light} href='/'>Bardic Collective</a></li>
-        <li className={classes}><a className={styles.light} href='/'>Listen</a></li>
-        <li className={classes}><a className={styles.light} href='/about'>About</a></li>
+        <li className={`${styles.logo}`}><a href='/'>Bardic Collective</a></li>
+        <li className={classes}><a href='/'>Listen</a></li>
+        <li className={classes}><a href='/about'>About</a></li>
 
         <li><LightSwitch classes={styles.lightbulb}/></li>
         <li className={`${styles.toggle}`} onClick={() => setCollapsed(!collapsed)}>{toggle}</li>

@@ -1,20 +1,20 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import nextCookie from 'next-cookies';
+import { FallbackStyles, MagicScriptTag } from '@components/Theme/InlineCssVariables';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
-    const { darkMode } = nextCookie(ctx);
-    return { ...initialProps, darkMode: darkMode };
+    return { ...initialProps };
   }
 
   render() {
-    // const bodyClass = this.props.darkMode ? 'darkMode' : 'lightMode';
-    const bodyClass = 'light no-margin'
     return (
       <Html>
-        <Head />
-        <body className={bodyClass}>
+        <Head>
+          <FallbackStyles />
+        </Head>
+        <body>
+          <MagicScriptTag />
           <Main />
           <NextScript />
         </body>

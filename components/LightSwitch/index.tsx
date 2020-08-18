@@ -1,20 +1,24 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent, useState, useContext } from "react";
+import { ThemeContext } from "@contexts/theme";
 import { Lightbulb } from "@components/SVGs";
-import Cookie from "universal-cookie";
 
 interface Props {
   classes?: string
 }
 
 const LightSwitch: FunctionComponent<Props> = ({classes}) => {
-  const [darkMode, setDarkMode] = useState(true);
-  const [on, setOn] = useState(false);
+  const { colorMode, setColorMode } = useContext(ThemeContext);
+
+  // short circuit
+  if (!colorMode) {
+    return null;
+  }
+
+  const darkMode = colorMode === 'dark';
+  const [on, setOn] = useState(!darkMode);
 
   const setMode = () => {
-    console.log("setting cookie");
-    const cookie = new Cookie();
-    cookie.set('darkMode', !darkMode, { path: "/"});
-    setDarkMode(!darkMode);
+    setColorMode(darkMode ? 'light' : 'dark');
   };
 
   return (
